@@ -94,7 +94,7 @@ weatherService: {
 
 > [Content overview](#content)
 
-Just click [here](https://seanszetho.github.io/digitalsignagemu.github.io/).
+Just click [here](https://seanszetho.github.io/digitalsignagemu.github.io/](https://seanszetho.github.io/digitalsignagemu.github.io/www/index.html).
 
 ---
 
