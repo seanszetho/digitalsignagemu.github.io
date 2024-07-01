@@ -94,7 +94,7 @@ weatherService: {
 
 > [Content overview](#content)
 
-Just Start [index.html](www/index.html) in an browser and see the result.
+Just click [here](https://seanszetho.github.io/digitalsignagemu.github.io/).
 
 ---
 
