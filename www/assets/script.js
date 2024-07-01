@@ -18,7 +18,6 @@ let _confFile = "custom/default.conf";
 function initConfig() {
   _useSeconds = String(_config.format.labels.time).includes("{3}");
 
-  _config.background_image =
   _config.background_image = _helpers.parseSrcUrl(
     _helpers.valueOrDefault(
       _config.background_image,
@@ -53,7 +52,7 @@ function initConfig() {
     "slideid",
     _helpers.valueOrDefault(
       _config.googleSlide.slideId,
-      "2PACX-1vSBNy-mN519II3gzObo8p32RhVHaL26vFruRj27zJMnrkyOQ1yyCjQBuYkZqlSvOaIWGQz9Woc_sFVM"
+      localStorage.getItem("googleSlideKey") || "2PACX-1vSBNy-mN519II3gzObo8p32RhVHaL26vFruRj27zJMnrkyOQ1yyCjQBuYkZqlSvOaIWGQz9Woc_sFVM"
     )
   );
 
@@ -220,6 +219,12 @@ function updateWeatherBanner(weather) {
   );
 }
 
+// Function to extract slideId from the given URL or key
+function extractSlideId(input) {
+    const regex = /\/d\/e\/([a-zA-Z0-9-_]+)\//;
+    const match = input.match(regex);
+    return match ? match[1] : input;
+}
 
 // START SCRIPT
 function initialize() {
@@ -241,6 +246,22 @@ function initialize() {
       initPage();
     });
   });
+
+  // New code to handle form submission
+  const form = document.getElementById("slideForm");
+
+  if (form) {
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      let input = document.getElementById("slideKey").value;
+      let slideId = extractSlideId(input);
+      if (slideId) {
+        localStorage.setItem("googleSlideKey", slideId);
+        document.getElementById("message").textContent = "Google Slide Key saved successfully!";
+        document.getElementById("message").style.display = "block";
+      }
+    });
+  }
 }
 
 initialize();

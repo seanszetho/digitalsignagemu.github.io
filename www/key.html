@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Slide Key Input</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: link to a CSS file -->
-    <script type="module" src="script.js"></script> <!-- Use type="module" for ES6 modules -->
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="module" src="assets/script.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Enter Google Slide Key</h1>
+        <h1>Enter Google Slide Key or URL</h1>
         <form id="slideForm">
-            <label for="slideKey">Google Slide Key:</label>
+            <label for="slideKey">Google Slide Key or URL:</label>
             <input type="text" id="slideKey" name="slideKey" required>
             <button type="submit">Submit</button>
         </form>
+        <p id="message" style="display: none;"></p>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 </body>
 </html>
+
+
