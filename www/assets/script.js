@@ -1,6 +1,22 @@
 import { db } from './firebaseConfig.js';
 import { ref, set, get } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 
+// CONSTANTS
+const CONFIG_FILE_FORMAT = "custom/{0}.conf";
+const WEATHER_ICON_URL = "assets/weathericons/{0}.svg";
+
+// VARIABLES
+let _config = {};
+let _helpers = {};
+let _lastMinute = -1;
+let _lastSecond = -1;
+let _useSeconds = false;
+let _lastDay = -1;
+let _current_date = "";
+let _diasUrl = "";
+let _confName = "default";
+let _confFile = "custom/default.conf";
+
 // Function to extract slideId from the given URL or key
 function extractSlideId(input) {
     const regex = /\/d\/e\/([a-zA-Z0-9-_]+)\//;
@@ -47,49 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error fetching document: ", error);
     });
 });
-
-// Example initialization function from previous scripts
-function initialize() {
-  // REQUIRE SETUP
-  requirejs.config({
-    baseUrl: "./",
-  });
-  requirejs(["assets/jquery", "assets/helpers"], function (jquery, helpers) {
-    $(".faded").hide(1);
-    _helpers = helpers.getHelpers();
-    _confName = _helpers.getUrlParamValue("conf", _confName);
-    _confFile = _helpers.dynamicStringFormat(CONFIG_FILE_FORMAT, _confName);
-
-    // Loads the configuration file and initializes the configuration and slide.
-    requirejs([_confFile], function (conf) {
-      _config = conf.getConfig();
-      initConfig();
-      initStyle();
-      initPage();
-    });
-  });
-}
-
-// Call initialize to start the process
-initialize();
-
 // Rest of your initialization and configuration code
-
-// CONSTANTS
-const CONFIG_FILE_FORMAT = "custom/{0}.conf";
-const WEATHER_ICON_URL = "assets/weathericons/{0}.svg";
-
-// VARIABLES
-let _config = {};
-let _helpers = {};
-let _lastMinute = -1;
-let _lastSecond = -1;
-let _useSeconds = false;
-let _lastDay = -1;
-let _current_date = "";
-let _diasUrl = "";
-let _confName = "default";
-let _confFile = "custom/default.conf";
 
 // CONFIG
 function initConfig() {
@@ -295,3 +269,27 @@ function updateWeatherBanner(weather) {
     )
   );
 }
+// Example initialization function from previous scripts
+function initialize() {
+  // REQUIRE SETUP
+  requirejs.config({
+    baseUrl: "./",
+  });
+  requirejs(["assets/jquery", "assets/helpers"], function (jquery, helpers) {
+    $(".faded").hide(1);
+    _helpers = helpers.getHelpers();
+    _confName = _helpers.getUrlParamValue("conf", _confName);
+    _confFile = _helpers.dynamicStringFormat(CONFIG_FILE_FORMAT, _confName);
+
+    // Loads the configuration file and initializes the configuration and slide.
+    requirejs([_confFile], function (conf) {
+      _config = conf.getConfig();
+      initConfig();
+      initStyle();
+      initPage();
+    });
+  });
+}
+
+// Call initialize to start the process
+initialize();
