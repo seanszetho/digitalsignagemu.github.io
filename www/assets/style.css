@@ -1,5 +1,5 @@
 :root {
-  --frameWidth: calc(min(97.5vw, calc(95.55vh / 0.5625)));
+  --frameWidth: calc(min(94vw, calc(92.8vh / 0.5625))); /* Adjusted for larger bezel */
   --frameHeight: calc(var(--frameWidth) * 0.5625);
   --frameScale: calc(var(--frameWidth) / 1280);
 }
@@ -39,8 +39,8 @@ span {
 .bodycontainer {
   position: absolute;
   display: none;
-  width: calc(100vw - 20px); /* Small bezel */
-  height: calc(100vh - 20px); /* Small bezel */
+  width: 100vw;
+  height: 100vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -51,7 +51,7 @@ span {
 
 .framecontent {
   position: absolute;
-  width: 100%;
+  width: 80%; /* Adjusted width to fit within the left side */
   height: 100%;
   overflow: hidden;
 }
@@ -70,9 +70,8 @@ span {
 .textoverlay {
   position: absolute;
   z-index: 100;
-  left: 75%; /* Adjust as needed */
   right: 0;
-  width: 25%; /* Adjust as needed */
+  width: 20%; /* Adjusted width */
   top: 0;
   height: 100%;
   font-size: calc(var(--frameWidth) * 0.01);
