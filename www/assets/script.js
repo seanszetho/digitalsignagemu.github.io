@@ -32,16 +32,15 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener("submit", async function(event) {
             event.preventDefault();
             let input = document.getElementById("slideKey").value;
-            let numSlides = document.getElementById("numSlides").value;
             let slideId = extractSlideId(input);
-            if (slideId) {
+            let numSlides = document.getElementById("numSlides").value;
+            if (slideId && numSlides) {
                 try {
-                    await set(ref(db, 'settings/slideKey'), { slideKey: slideId });
-                    localStorage.setItem("numSlides", numSlides); // Store numSlides in local storage
-                    document.getElementById("message").textContent = "Google Slide Key and number of slides saved successfully!";
+                    await set(ref(db, 'settings/slideKey'), { slideKey: slideId, numSlides: numSlides });
+                    document.getElementById("message").textContent = "Google Slide Key and Number of Slides saved successfully!";
                     document.getElementById("message").style.display = "block";
                 } catch (e) {
-                    document.getElementById("message").textContent = "Error saving Google Slide Key.";
+                    document.getElementById("message").textContent = "Error saving Google Slide Key and Number of Slides.";
                     document.getElementById("message").style.display = "block";
                     console.error("Error adding document: ", e);
                 }
@@ -49,15 +48,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Fetch slide key from Realtime Database and initialize page
+    // Fetch slide key and numSlides from Realtime Database and initialize page
     const slideKeyRef = ref(db, 'settings/slideKey');
     get(slideKeyRef).then((snapshot) => {
         if (snapshot.exists()) {
-            const slideId = snapshot.val().slideKey;
+            const data = snapshot.val();
+            const slideId = data.slideKey;
+            const numSlides = data.numSlides;
+            localStorage.setItem("numSlides", numSlides);
             const iframe = document.querySelector('.dias-frame');
             if (iframe) {
                 // Use the fetched slideId and the durationSek value from the config
-                iframe.src = `https://docs.google.com/presentation/d/e/${slideId}/embed?start=true&loop=true&delayms=${_config.googleSlide.durationSek * 1000}`;
+                iframe.src = `https://docs.google.com/presentation/d/e/${slideId}/embed?start=true&loop=true&delayms=${_config.googleSlide.durationSek * 1000}&rm=minimal&slide=id.p`;
             }
         } else {
             console.log("No data available");
@@ -66,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error fetching document: ", error);
     });
 });
+// Rest of your initialization and configuration code
 
 // CONFIG
 function initConfig() {
@@ -116,7 +119,7 @@ function initConfig() {
     "https://docs.google.com/presentation/d/e/" +
       _config.googleSlide.slideId +
       "/embed?start=true&loop=true&delayms=" +
-      _config.googleSlide.durationSek * 1000
+      _config.googleSlide.durationSek * 1000 + "&rm=minimal&slide=id.p"
   );
 }
 

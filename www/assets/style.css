@@ -3,6 +3,7 @@
   --frameHeight: calc(var(--frameWidth) * 0.5625);
   --frameScale: calc(var(--frameWidth) / 1280);
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   color: #ddd;
   overflow: hidden;
 }
+
 body,
 img,
 div,
@@ -20,21 +22,25 @@ span,
   margin: 0;
   padding: 0;
 }
+
 a {
   color: white;
 }
+
 span {
   font-size: small;
 }
+
 .sup {
   font-size: smaller;
   vertical-align: baseline;
 }
+
 .bodycontainer {
   position: absolute;
   display: none;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  width: calc(100vw - 20px); /* Small bezel */
+  height: calc(100vh - 20px); /* Small bezel */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -42,12 +48,14 @@ span {
   background-size: contain;
   background-position: center;
 }
+
 .framecontent {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .dias-frame {
   position: absolute;
   top: 0;
@@ -58,6 +66,7 @@ span {
   border: none;
   overflow: hidden;
 }
+
 .textoverlay {
   position: absolute;
   z-index: 100;
@@ -69,6 +78,7 @@ span {
   font-size: calc(var(--frameWidth) * 0.01);
   background-color: #75787B;
 }
+
 .header {
   position: absolute;
   width: 100%;
@@ -77,6 +87,7 @@ span {
   top: 5%;
   z-index: 900;
 }
+
 .header_label {
   position: absolute;
   bottom: 0;
@@ -86,6 +97,7 @@ span {
   text-align: center;
   z-index: 1000;
 }
+
 .time_label,
 .date_label {
   position: absolute;
@@ -94,14 +106,17 @@ span {
   text-align: right;
   z-index: 1000;
 }
+
 .time_label {
   top: 0;
   font-size: 2em;
 }
+
 .date_label {
   bottom: 0;
   font-size: 1.2em;
 }
+
 .footer {
   position: absolute;
   width: 100%;
@@ -110,6 +125,7 @@ span {
   bottom: 5%;
   z-index: 1000;
 }
+
 .weather_icon {
   position: absolute;
   width: 7%;
@@ -117,10 +133,12 @@ span {
   left: 0;
   z-index: 1010;
 }
+
 .footer div {
   position: absolute;
   z-index: 1000;
 }
+
 .weather_temp {
   width: 9%;
   left: 7.5%;
@@ -129,6 +147,7 @@ span {
   font-size: 1.75em;
   z-index: 1010;
 }
+
 .weather_feel {
   width: 9%;
   left: 7.5%;
@@ -138,23 +157,27 @@ span {
   overflow: visible;
   z-index: 1010;
 }
+
 .weather_cond,
 .weather_text {
   bottom: 10%;
   z-index: 1010;
 }
+
 .weather_cond {
   width: 23%;
   left: 17%;
   text-align: left;
   font-size: 1.75em;
 }
+
 .weather_text {
   width: 49%;
   right: 0;
   text-align: right;
   font-size: 1.45em;
 }
+
 .main {
   position: absolute;
   display: none;
