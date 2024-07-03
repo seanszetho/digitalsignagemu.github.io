@@ -1,3 +1,6 @@
+import { db } from './firebaseConfig.js';
+import { ref, set, get } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
 // CONSTANTS
 const CONFIG_FILE_FORMAT = "custom/{0}.conf";
 const WEATHER_ICON_URL = "assets/weathericons/{0}.svg";
@@ -13,6 +16,51 @@ let _current_date = "";
 let _diasUrl = "";
 let _confName = "default";
 let _confFile = "custom/default.conf";
+
+// Function to extract slideId from the given URL or key
+function extractSlideId(input) {
+    const regex = /\/d\/e\/([a-zA-Z0-9-_]+)\//;
+    const match = input.match(regex);
+    return match ? match[1] : input;
+}
+
+// Handle form submission in key.html
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("slideForm");
+
+    if (form) {
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            let input = document.getElementById("slideKey").value;
+            let slideId = extractSlideId(input);
+            if (slideId) {
+                try {
+                    await set(ref(db, 'settings/slideKey'), { slideKey: slideId });
+                    document.getElementById("message").textContent = "Google Slide Key saved successfully!";
+                    document.getElementById("message").style.display = "block";
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            }
+        });
+    }
+
+    // Fetch slide key from Realtime Database and initialize page
+    const slideKeyRef = ref(db, 'settings/slideKey');
+    get(slideKeyRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            const slideId = snapshot.val().slideKey;
+            const iframe = document.querySelector('.dias-frame');
+            if (iframe) {
+                iframe.src = `https://docs.google.com/presentation/d/e/${slideId}/embed?start=true&loop=true&delayms=3000`;
+            }
+        } else {
+            console.log("No data available");
+        }
+    }).catch((error) => {
+        console.error("Error fetching document: ", error);
+    });
+});
 
 // CONFIG
 function initConfig() {
@@ -219,13 +267,6 @@ function updateWeatherBanner(weather) {
   );
 }
 
-// Function to extract slideId from the given URL or key
-function extractSlideId(input) {
-    const regex = /\/d\/e\/([a-zA-Z0-9-_]+)\//;
-    const match = input.match(regex);
-    return match ? match[1] : input;
-}
-
 // START SCRIPT
 function initialize() {
   // REQUIRE SETUP
@@ -246,22 +287,6 @@ function initialize() {
       initPage();
     });
   });
-
-  // New code to handle form submission
-  const form = document.getElementById("slideForm");
-
-  if (form) {
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      let input = document.getElementById("slideKey").value;
-      let slideId = extractSlideId(input);
-      if (slideId) {
-        localStorage.setItem("googleSlideKey", slideId);
-        document.getElementById("message").textContent = "Google Slide Key saved successfully!";
-        document.getElementById("message").style.display = "block";
-      }
-    });
-  }
 }
 
 initialize();
