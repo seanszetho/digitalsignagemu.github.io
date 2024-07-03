@@ -78,7 +78,7 @@ span {
   top: 0%;
   height: 100%;
   font-size: calc(var(--frameWidth) * 0.01);
-  background-color: black;
+  background-color: #0C2340;
 }
 .header {
   position: absolute;
