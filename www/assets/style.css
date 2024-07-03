@@ -44,8 +44,8 @@ span {
 .bodycontainer {
   position: absolute;
   display: none;
-  width: var(--frameWidth);
-  height: var(--frameHeight);
+  width: 100vw;
+  height: 90vw;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
