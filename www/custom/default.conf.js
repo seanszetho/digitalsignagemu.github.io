@@ -67,7 +67,7 @@ let config = {
             Example: '2PACX-1vSBNy-mN519II3gzObo8p32RhVHaL26vFruRj27zJMnrkyOQ1yyCjQBuYkZqlSvOaIWGQz9Woc_sFVM'   */
 		slideId: localStorage.getItem("googleSlideKey") || '2PACX-1vTcmj4CYKCs4XzJdqnPTiSgoJD6liD2ijoUsR2A15K8jT7ezSTWijIMhMKEaUlHwPjhWph2uhFbEQbh',
 		/*  Duration between slides in seconds. Default 20   */
-		durationSek: 12,
+		durationSek: 30,
 		/*  Reload Webpage after ? seconds. Do this in order to get updated slides. Default 60  */
 		reloadSlide: 320,
 	},
