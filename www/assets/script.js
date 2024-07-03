@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const slideId = snapshot.val().slideKey;
             const iframe = document.querySelector('.dias-frame');
             if (iframe) {
-                iframe.src = `https://docs.google.com/presentation/d/e/${slideId}/embed?start=true&loop=true&delayms=3000`;
+                // Use the fetched slideId and the durationSek value from the config
+                iframe.src = `https://docs.google.com/presentation/d/e/${slideId}/embed?start=true&loop=true&delayms=${_config.googleSlide.durationSek * 1000}`;
             }
         } else {
             console.log("No data available");
