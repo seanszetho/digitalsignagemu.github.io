@@ -32,11 +32,13 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener("submit", async function(event) {
             event.preventDefault();
             let input = document.getElementById("slideKey").value;
+            let numSlides = document.getElementById("numSlides").value;
             let slideId = extractSlideId(input);
             if (slideId) {
                 try {
                     await set(ref(db, 'settings/slideKey'), { slideKey: slideId });
-                    document.getElementById("message").textContent = "Google Slide Key saved successfully!";
+                    localStorage.setItem("numSlides", numSlides); // Store numSlides in local storage
+                    document.getElementById("message").textContent = "Google Slide Key and number of slides saved successfully!";
                     document.getElementById("message").style.display = "block";
                 } catch (e) {
                     document.getElementById("message").textContent = "Error saving Google Slide Key.";
@@ -64,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error fetching document: ", error);
     });
 });
-// Rest of your initialization and configuration code
 
 // CONFIG
 function initConfig() {
@@ -86,9 +87,7 @@ function initConfig() {
     _helpers.getUrlParamValue("duration", _config.googleSlide.durationSek)
   );
 
-  _config.googleSlide.reloadSlide = parseInt(
-    _helpers.getUrlParamValue("reload", _config.googleSlide.reloadSlide)
-  );
+  _config.googleSlide.reloadSlide = (parseInt(localStorage.getItem("numSlides")) || 10) * _config.googleSlide.durationSek;
 
   _config.weatherService.showWeather = _helpers.parseBool(
     _config.weatherService.showWeather,
@@ -270,6 +269,7 @@ function updateWeatherBanner(weather) {
     )
   );
 }
+
 // Example initialization function from previous scripts
 function initialize() {
   // REQUIRE SETUP
