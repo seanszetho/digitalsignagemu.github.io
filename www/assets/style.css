@@ -76,6 +76,8 @@ span {
   height: 100%;
   font-size: calc(var(--frameWidth) * 0.01);
   background-color: #75787B;
+  padding: 1%; /* Added padding for bezel */
+  box-sizing: border-box;
 }
 
 .header {
@@ -181,4 +183,9 @@ span {
   position: absolute;
   display: none;
   top: -100%;
+}
+
+.widgets {
+  margin-top: 20%;
+  text-align: center;
 }
