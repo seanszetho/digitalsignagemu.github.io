@@ -7,6 +7,13 @@ Useful for implementing a free InfoScreen, that can be edit directly in [Google 
 
 ---
 
+## Start the site
+
+> [Content overview](#content)
+
+Just click [here](https://seanszetho.github.io/digitalsignagemu.github.io/www/index.html).
+
+---
 ## Content
 
 - [InfoScreen showing Google Slides](#infoscreen-showing-google-slides)
@@ -90,13 +97,6 @@ weatherService: {
 
 ---
 
-## Start the site
-
-> [Content overview](#content)
-
-Just click [here](https://seanszetho.github.io/digitalsignagemu.github.io/www/index.html).
-
----
 
 ## Customizations
 
