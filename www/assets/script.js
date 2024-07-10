@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error fetching document: ", error);
     });
 });
-
 // Rest of your initialization and configuration code
 
 // CONFIG
