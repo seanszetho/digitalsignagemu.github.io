@@ -1,6 +1,6 @@
 # InfoScreen showing Google Slides
 
-![InfoScreen With Google slides and Weather Info](www/custom/favicon.png)
+![InfoScreen With Google slides and Weather Info]
 
 A simple website that embeds and loops thru an Google Slide, with overlay that shows date, time and local weather information.
 Useful for implementing a free InfoScreen, that can be edit directly in [Google Slides](https://www.google.com/slides/about/).
@@ -300,24 +300,6 @@ You can change the format of the date by adding any of the following options.
 
 ---
 
-### License
 
-> [Content overview](#content)
-
-This project is licensed under the **MIT license**.
-
-Copyrights on the definition files are respective of each contributor listed at the beginning of each definition file.
-
-## MIT License
-
-### Copyright (c) 2024 Brian Kristensen
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-**The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.**
-
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----
 
 > [Content overview](#content)
