@@ -9,10 +9,8 @@
     <title>Info Screen</title>
     <link class="svglogo" rel="icon" type="image/x-icon" href="custom/favicon.png">
     <link rel="stylesheet" href="assets/style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
-    <script data-main="assets/script" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="assets/script.js" type="module"></script>
 </head>
 <body>
     <div class="bodycontainer">
@@ -27,47 +25,7 @@
         </div>
         <div class="textoverlay">
             <div class="widgets">
-                <!--Dayspedia.com widget-->
                 <iframe width='308' height='247' style='padding:0!important;margin:0!important;border:none!important;background:none!important;background:transparent!important' marginheight='0' marginwidth='0' frameborder='0' scrolling='no' comment='/*defined*/' src='https://dayspedia.com/if/digit/?v=1&iframe=eyJ3LTEyIjp0cnVlLCJ3LTExIjp0cnVlLCJ3LTEzIjpmYWxzZSwidy0xNCI6ZmFsc2UsInctMTUiOnRydWUsInctMTEwIjpmYWxzZSwidy13aWR0aC0wIjpmYWxzZSwidy13aWR0aC0xIjp0cnVlLCJ3LXdpZHRoLTIiOmZhbHNlLCJ3LTE2IjoiMjRweCIsInctMTkiOiI5NiIsInctMTciOiIyNCIsInctMjEiOnRydWUsImJnaW1hZ2UiOi0xLCJiZ2ltYWdlU2V0IjpmYWxzZSwidy0yMWMwIjoiIzAwMDAwMCIsInctMCI6dHJ1ZSwidy0zIjpmYWxzZSwidy0zYzAiOiIjOTkzOTA1Iiwidy0zYjAiOiI0Iiwidy02IjoiIzM0MzQzNCIsInctMjAiOnRydWUsInctNCI6IiNmNWY1ZjUiLCJ3LTE4IjpmYWxzZSwidy13aWR0aC0yYy0wIjoiMzAwIiwidy0xMTUiOmZhbHNlfQ==&lang=en&cityid=995'></iframe><!--Dayspedia.com widget ENDS-->
-                <script>
-                    (function(d, s, id) {
-                        if (d.getElementById(id)) {
-                            if (window.__TOMORROW__) {
-                                window.__TOMORROW__.renderWidget();
-                            }
-                            return;
-                        }
-                        const fjs = d.getElementsByTagName(s)[0];
-                        const js = d.createElement(s);
-                        js.id = id;
-                        js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-            
-                        fjs.parentNode.insertBefore(js, fjs);
-                    })(document, 'script', 'tomorrow-sdk');
-                    </script>
-            
-                    <div class="tomorrow"
-                       data-location-id="116923"
-                       data-language="EN"
-                       data-unit-system="IMPERIAL"
-                       data-skin="dark"
-                       data-widget-type="upcoming"
-                       style="padding-bottom:22px;position:relative;"
-                    >
-                      <a
-                        href="https://www.tomorrow.io/weather-api/"
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
-                        style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
-                      >
-                        <img
-                          alt="Powered by the Tomorrow.io Weather API"
-                          src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
-                          width="250"
-                          height="18"
-                        />
-                      </a>
-                    </div>
             </div>
         </div>
     </div>
