@@ -27,7 +27,45 @@
         <div class="textoverlay">
             <div class="widgets">
                 <iframe width='223' height='166' style='padding:0!important;margin:0!important;border:none!important;background:none!important;background:transparent!important' marginheight='0' marginwidth='0' frameborder='0' scrolling='no' comment='/defined/' src='https://dayspedia.com/if/digit/?v=1&iframe=eyJ3LTEyIjp0cnVlLCJ3LTExIjp0cnVlLCJ3LTEzIjpmYWxzZSwidy0xNCI6ZmFsc2UsInctMTUiOmZhbHNlLCJ3LTExMCI6ZmFsc2UsInctd2lkdGgtMCI6dHJ1ZSwidy13aWR0aC0xIjpmYWxzZSwidy13aWR0aC0yIjpmYWxzZSwidy0xNiI6IjI0cHgiLCJ3LTE5IjoiNDgiLCJ3LTE3IjoiMTYiLCJ3LTIxIjp0cnVlLCJiZ2ltYWdlIjotMSwiYmdpbWFnZVNldCI6ZmFsc2UsInctMjFjMCI6IiNmZmZmZmYiLCJ3LTAiOnRydWUsInctMyI6dHJ1ZSwidy0zYzAiOiIjMzQzNDM0Iiwidy0zYjAiOiIxIiwidy02IjoiIzM0MzQzNCIsInctMjAiOnRydWUsInctNCI6IiMwMDdkYmYiLCJ3LTE4IjpmYWxzZSwidy13aWR0aC0yYy0wIjoiMzAwIiwidy0xMTUiOmZhbHNlfQ==&lang=en&cityid=995'></iframe>
-                <a class="weatherwidget-io" href="https://forecast7.com/en/41d43n96d50/fremont/" data-label_1="FREMONT" data-label_2="WEATHER" data-theme="original" >FREMONT WEATHER</a>
+                <script>
+                    (function(d, s, id) {
+                        if (d.getElementById(id)) {
+                            if (window.__TOMORROW__) {
+                                window.__TOMORROW__.renderWidget();
+                            }
+                            return;
+                        }
+                        const fjs = d.getElementsByTagName(s)[0];
+                        const js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+            
+                        fjs.parentNode.insertBefore(js, fjs);
+                    })(document, 'script', 'tomorrow-sdk');
+                    </script>
+            
+                    <div class="tomorrow"
+                       data-location-id="116923"
+                       data-language="EN"
+                       data-unit-system="IMPERIAL"
+                       data-skin="dark"
+                       data-widget-type="upcoming"
+                       style="padding-bottom:22px;position:relative;"
+                    >
+                      <a
+                        href="https://www.tomorrow.io/weather-api/"
+                        rel="nofollow noopener noreferrer"
+                        target="_blank"
+                        style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+                      >
+                        <img
+                          alt="Powered by the Tomorrow.io Weather API"
+                          src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+                          width="250"
+                          height="18"
+                        />
+                      </a>
+                    </div>
             </div>
         </div>
     </div>
