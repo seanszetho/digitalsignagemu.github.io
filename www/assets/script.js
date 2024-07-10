@@ -348,7 +348,7 @@ function initialize() {
       strSeconds
     )
   );
-}
+
 
   // WEATHER
   function updateWeatherBanner(weather) {
@@ -457,4 +457,3 @@ function initialize() {
 
   // Call initialize to start the process
   initialize();
-});
