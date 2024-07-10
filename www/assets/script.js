@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     await set(ref(db, 'settings/slideKey'), { slideKey: slideId, numSlides: numSlides });
                     document.getElementById("message").textContent = "Google Slide Key and Number of Slides saved successfully!";
                     document.getElementById("message").style.display = "block";
-                    console.log("Google Slide Key and Number of Slides saved successfully!");
                 } catch (e) {
                     document.getElementById("message").textContent = "Error saving Google Slide Key and Number of Slides.";
                     document.getElementById("message").style.display = "block";
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (iframe) {
                 // Use the fetched slideId and the durationSek value from the config
                 iframe.src = `https://docs.google.com/presentation/d/e/${slideId}/embed?start=true&loop=true&delayms=${_config.googleSlide.durationSek * 1000}&rm=minimal&slide=id.p`;
-                console.log("Iframe source set to: " + iframe.src);
             }
         } else {
             console.log("No data available");
@@ -70,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error fetching document: ", error);
     });
 });
+// Rest of your initialization and configuration code
 
 // CONFIG
 function initConfig() {
@@ -122,7 +121,6 @@ function initConfig() {
       "/embed?start=true&loop=true&delayms=" +
       _config.googleSlide.durationSek * 1000 + "&rm=minimal&slide=id.p"
   );
-  console.log("Configuration initialized with URL: " + _diasUrl);
 }
 
 function initStyle() {
@@ -152,7 +150,6 @@ function initStyle() {
       '<div class="favicon">&nbsp;</div>'
     )
   );
-  console.log("Style initialized");
 }
 
 function initPage() {
@@ -169,7 +166,6 @@ function initPage() {
   });
 
   ifrm.attr("src", _diasUrl);
-  console.log("Iframe source set to: " + _diasUrl);
 
   _helpers.runAfterXminutes(_helpers.reloadBrowser);
 
@@ -192,9 +188,8 @@ function initPage() {
 
   // Set update weather banner timer
   if (_config.googleSlide.reloadSlide > 120) {
-    setInterval(_helpers.getCurrentWeather, 1000 * 60 * 90);
+    setInterval(_helpers.getCurrentWeather(), 1000 * 60 * 90);
   }
-  console.log("Page initialization complete");
 }
 
 // DATETIME
@@ -220,6 +215,10 @@ function updateDateTime() {
     strSeconds = String(now.getSeconds()).padStart(2, "0");
   }
   if (!_config.format.time24hours) {
+    // AM = Ante meridiem: Before noon  00:00:01 to 11:59:59
+    // PM = Post meridiem: After noon   12:00:01 to 23:59:59
+    // Midnight       00:00:00
+    // Noon           12:00:00
     if (hour < 12) {
       ampm = "am";
       if (hour == 0) hour = 12;
@@ -240,7 +239,6 @@ function updateDateTime() {
       strSeconds
     )
   );
-  console.log("DateTime updated: " + $(".time_label").text());
 }
 
 // WEATHER
@@ -273,7 +271,6 @@ function updateWeatherBanner(weather) {
       weather.description
     )
   );
-  console.log("Weather updated: " + $(".weather_temp").text());
 }
 
 // Example initialization function from previous scripts
@@ -296,7 +293,6 @@ function initialize() {
       initPage();
     });
   });
-  console.log("Initialization started");
 }
 
 // Call initialize to start the process
