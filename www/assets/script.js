@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById("message").textContent = "Google Slide Key and Number of Slides saved successfully!";
                     document.getElementById("message").style.display = "block";
                 } catch (e) {
-                    document.getElementById("message").textContent = "Error saving Google Slide Key and Number of Slides.";
+                    document.getElementById("message").textContent = "Error saving data.";
                     document.getElementById("message").style.display = "block";
                     console.error("Error adding document: ", e);
                 }
