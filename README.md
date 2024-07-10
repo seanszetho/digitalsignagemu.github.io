@@ -1,6 +1,6 @@
 # InfoScreen showing Google Slides
 
-![InfoScreen With Google slides and Weather Info]
+
 
 A simple website that embeds and loops thru an Google Slide, with overlay that shows date, time and local weather information.
 Useful for implementing a free InfoScreen, that can be edit directly in [Google Slides](https://www.google.com/slides/about/).
