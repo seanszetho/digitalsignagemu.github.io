@@ -190,6 +190,9 @@ span {
   text-align: center;
 }
 
+.time-widget {
+  height: 20%;
+}
 .weatherwidget-io {
-  height: 100%;
+  height: 80%;
 }
