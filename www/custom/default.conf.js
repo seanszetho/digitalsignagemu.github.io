@@ -36,7 +36,7 @@ let config = {
             /*  Header text in left top corner, just set to empty if you don't want any.
             {0} will be replaced with the favicon found here: "custom/favicon.png"  */
             header:
-                '{0} <a href="https://my.midlandu.edu/dashboard" target="_blank">Midland</a>',
+                '',
             /*  Date label format, 
             {0} will be replaced with current date in selected language */
             date: '{0}',
