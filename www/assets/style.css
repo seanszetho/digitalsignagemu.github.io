@@ -89,16 +89,6 @@ span {
   z-index: 900;
 }
 
-.header_label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60%;
-  font-size: 3em;
-  text-align: center;
-  z-index: 1000;
-}
-
 .time_label,
 .date_label {
   position: absolute;
@@ -191,7 +181,7 @@ span {
 }
 
 .time-widget {
-  height: 20%;
+  height: 50%;
   width: 100%;
 }
 .weatherwidget-io {
