@@ -189,3 +189,7 @@ span {
   margin-top: 20%;
   text-align: center;
 }
+
+.weatherwidget-io {
+  height: 100%;
+}
