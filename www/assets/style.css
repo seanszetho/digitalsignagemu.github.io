@@ -192,7 +192,9 @@ span {
 
 .time-widget {
   height: 20%;
+  width: 100%;
 }
 .weatherwidget-io {
-  height: 80%;
+  height: 100%;
+  width: 100%;
 }
