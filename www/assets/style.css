@@ -74,9 +74,9 @@ span {
   width: 20%; /* Adjusted width */
   top: 0;
   height: 100%;
-  font-size: calc(var(--frameWidth) * 0.01);
+  /*font-size: calc(var(--frameWidth) * 0.01);*/
   background-color: #75787B;
-  padding: 1%; /* Added padding for bezel */
+  padding: 3%; /* Added padding for bezel */
   box-sizing: border-box;
 }
 
