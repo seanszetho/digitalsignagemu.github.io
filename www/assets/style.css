@@ -77,24 +77,21 @@ span {
   background-color: #75787B;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute widgets vertically */
   padding: 0; /* Ensure no padding affects the layout */
 }
 
 .header {
   width: 100%;
-  height: 50%; /* Adjust to occupy half of the sidebar */
+  height: 20%; /* Adjust to occupy around the top 1/5th of the sidebar */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .footer {
   width: 100%;
-  height: 50%; /* Adjust to occupy the remaining half of the sidebar */
+  height: 80%; /* Adjust to occupy the remaining 4/5th of the sidebar */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
