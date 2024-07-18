@@ -69,25 +69,28 @@ span {
 
 .textoverlay {
   position: absolute;
-  z-index: 100;
   right: 0;
-  width: 20%; /* Adjusted width */
+  width: 20%; /* Adjust width if necessary */
   top: 0;
   height: 100%;
   font-size: calc(var(--frameWidth) * 0.01);
   background-color: #75787B;
-  padding: 3%; /* Added padding for bezel */
+  padding: 3%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute widgets vertically */
 }
 
 .header {
-  position: center;
   width: 100%;
-  height: 100%;
-  left: 0;
-  top: 5%;
-  z-index: 900;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .time_label,
 .date_label {
@@ -183,8 +186,10 @@ span {
 .time-widget {
   height: 17.5%;
   width: 100%;
+  flex-grow: 1;
 }
 .weatherwidget-io {
-  height: 100%;
+  height: auto;
   width: 100%;
+  flex-grow: 1;
 }
