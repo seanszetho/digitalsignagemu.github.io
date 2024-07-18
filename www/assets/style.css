@@ -75,8 +75,6 @@ span {
   height: 100%;
   font-size: calc(var(--frameWidth) * 0.01);
   background-color: #75787B;
-  padding: 3%;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distribute widgets vertically */
@@ -84,8 +82,12 @@ span {
 
 .header {
   width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-grow: 1; /* Allow it to grow */
 }
 
 
@@ -181,11 +183,18 @@ span {
 }
 
 .time-widget {
-  height: 17.5%;
   width: 100%;
+  height: auto;
+  flex-grow: 1; /* Allow it to grow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .weatherwidget-io {
-  height: auto;
   width: 100%;
-  flex-grow: 1;
+  height: auto;
+  flex-grow: 1; /* Allow it to grow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
