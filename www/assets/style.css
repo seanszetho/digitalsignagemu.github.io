@@ -92,7 +92,6 @@ span {
   width: 100%;
   height: 80%; /* Adjust to occupy the remaining 4/5th of the sidebar */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
