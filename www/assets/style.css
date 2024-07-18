@@ -78,97 +78,30 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distribute widgets vertically */
+  padding: 0; /* Ensure no padding affects the layout */
 }
 
 .header {
   width: 100%;
-  height: auto;
+  height: 50%; /* Adjust to occupy half of the sidebar */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* Allow it to grow */
-}
-
-
-.time_label,
-.date_label {
-  position: absolute;
-  width: 20%;
-  right: 5%;
-  text-align: right;
-  z-index: 1000;
-}
-
-.time_label {
-  top: 0;
-  font-size: 2em;
-}
-
-.date_label {
-  bottom: 0;
-  font-size: 1.2em;
 }
 
 .footer {
-  position: absolute;
   width: 100%;
-  height: 5%;
-  left: 0;
-  bottom: 5%;
-  z-index: 1000;
-}
-
-.weather_icon {
-  position: absolute;
-  width: 7%;
-  top: 91%;
-  left: 0;
-  z-index: 1010;
+  height: 50%; /* Adjust to occupy the remaining half of the sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer div {
   position: absolute;
   z-index: 1000;
-}
-
-.weather_temp {
-  width: 9%;
-  left: 7.5%;
-  top: 0;
-  text-align: center;
-  font-size: 1.75em;
-  z-index: 1010;
-}
-
-.weather_feel {
-  width: 9%;
-  left: 7.5%;
-  bottom: 0;
-  text-align: center;
-  font-size: 1em;
-  overflow: visible;
-  z-index: 1010;
-}
-
-.weather_cond,
-.weather_text {
-  bottom: 10%;
-  z-index: 1010;
-}
-
-.weather_cond {
-  width: 23%;
-  left: 17%;
-  text-align: left;
-  font-size: 1.75em;
-}
-
-.weather_text {
-  width: 49%;
-  right: 0;
-  text-align: right;
-  font-size: 1.45em;
 }
 
 .main {
@@ -184,17 +117,11 @@ span {
 
 .time-widget {
   width: 100%;
-  height: auto;
-  flex-grow: 1; /* Allow it to grow */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  border: none;
 }
 .weatherwidget-io {
   width: 100%;
-  height: auto;
-  flex-grow: 1; /* Allow it to grow */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  border: none;
 }
